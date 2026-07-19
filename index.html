@@ -1,1 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Palace Hotel</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f8f8f8;
+color:#333;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+color:#c89b3c;
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+color:#333;
+transition:.3s;
+}
+
+nav a:hover{
+color:#c89b3c;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+color:white;
+z-index:2;
+}
+
+.hero h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 40px;
+background:#c89b3c;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#a97d21;
+}
+
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#222;
+}
+
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:15px;
+}
+
+.about h2{
+margin-bottom:20px;
+}
+
+.rooms{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.room{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.room:hover{
+transform:translateY(-10px);
+}
+
+.room img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.room-content{
+padding:20px;
+}
+
+.room h3{
+margin-bottom:10px;
+}
+
+.price{
+color:#c89b3c;
+font-size:22px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:12px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.service{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.service h3{
+margin:15px 0;
+color:#c89b3c;
+}
+
+.booking{
+background:white;
+border-radius:15px;
+padding:40px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.booking form{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.booking input,
+.booking select,
+.booking textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:8px;
+outline:none;
+}
+
+.booking button{
+padding:15px;
+background:#c89b3c;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-size:17px;
+}
+
+.booking button:hover{
+background:#a97d21;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.review{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:40px;
+}
+
+.map iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:12px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+header{
+padding:15px;
+flex-direction:column;
+}
+
+nav{
+margin-top:10px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.title{
+font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Royal Palace
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#rooms">Rooms</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Booking</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Luxury Stay Experience</h1>
+
+<p>Welcome To Royal Palace Hotel</p>
+
+<a href="#booking" class="btn">
+Book Now
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">
+About Our Hotel
+</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=1000&q=80">
+
+<div>
+
+<h2>Feel Luxury Like Never Before</h2>
+
+<p>
+Enjoy premium rooms, delicious food, swimming pool, free WiFi,
+parking, spa, rooftop restaurant and 24x7 room service.
+</p>
+
+<br>
+
+<p>
+Our hotel provides world class hospitality with modern interiors
+and comfortable accommodation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="rooms">
+
+<h2 class="title">
+Our Rooms
+</h2>
+
+<div class="rooms">
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80">
+
+<div class="room-content">
+
+<h3>Deluxe Room</h3>
+
+<p>AC • WiFi • TV • Breakfast</p>
+
+<div class="price">
+₹2499 / Night
+</div>
+
+<a href="#booking" class="btn">
+Book
+</a>
+
+</div>
+
+</div>
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80">
+
+<div class="room-content">
+
+<h3>Premium Suite</h3>
+
+<p>Luxury Interior • King Bed</p>
+
+<div class="price">
+₹4999 / Night
+</div>
+
+<a href="#booking" class="btn">
+Book
+</a>
+
+</div>
+
+</div>
+
+<div class="room">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80">
+
+<div class="room-content">
+
+<h3>Family Suite</h3>
+
+<p>4 Guests • Balcony • AC • WiFi</p>
+
+<div class="price">
+₹6999 / Night
+</div>
+
+<a href="#booking" class="btn">Book</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2 class="title">Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Our Services
+</h2>
+
+<div class="services">
+
+<div class="service">
+
+<h3>Free WiFi</h3>
+
+<p>High speed internet available in all rooms.</p>
+
+</div>
+
+<div class="service">
+
+<h3>Restaurant</h3>
+
+<p>Multi cuisine restaurant with delicious food.</p>
+
+</div>
+
+<div class="service">
+
+<h3>Swimming Pool</h3>
+
+<p>Luxury outdoor swimming pool.</p>
+
+</div>
+
+<div class="service">
+
+<h3>Spa</h3>
+
+<p>Relax with professional spa services.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">
+Guest Reviews
+</h2>
+
+<div class="testimonials">
+
+<div class="review">
+
+⭐⭐⭐⭐⭐
+
+<p>
+
+Amazing hotel with friendly staff.
+
+</p>
+
+<b>- Rahul Sharma</b>
+
+</div>
+
+<div class="review">
+
+⭐⭐⭐⭐⭐
+
+<p>
+
+Best experience. Rooms were clean and luxurious.
+
+</p>
+
+<b>- Priya Verma</b>
+
+</div>
+
+<div class="review">
+
+⭐⭐⭐⭐⭐
+
+<p>
+
+Perfect place for family vacation.
+
+</p>
+
+<b>- Arjun Patel</b>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="booking">
+
+<h2 class="title">
+Book Your Stay
+</h2>
+
+<div class="booking">
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<input type="tel" placeholder="Phone">
+
+<input type="date">
+
+<input type="date">
+
+<select>
+
+<option>Select Room</option>
+
+<option>Deluxe</option>
+
+<option>Premium</option>
+
+<option>Family Suite</option>
+
+</select>
+
+<textarea placeholder="Special Request"></textarea>
+
+<button>
+
+Book Now
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">
+Contact Us
+</h2>
+
+<div class="contact">
+
+<div>
+
+<h2>Royal Palace Hotel</h2>
+
+<br>
+
+<p>
+
+📍 Your Hotel Address
+
+</p>
+
+<br>
+
+<p>
+
+📞 +91 9876543210
+
+</p>
+
+<br>
+
+<p>
+
+✉ hotel@email.com
+
+</p>
+
+</div>
+
+<div class="map">
+
+<iframe
+src="https://maps.google.com/maps?q=goa&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Royal Palace Hotel</h2>
+
+<br>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+const links=document.querySelectorAll("nav a");
+
+links.forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document.querySelector("header").style.background="#fff";
+
+});
+
+});
+
+document.querySelector("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Thank You! Booking Request Submitted.");
+
+});
+
+</script>
+
+</body>
+
+</html>
